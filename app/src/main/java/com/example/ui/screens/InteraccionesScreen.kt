@@ -61,8 +61,8 @@ fun InteraccionesScreen(
     isDark: Boolean,
     modifier: Modifier = Modifier
 ) {
-    val textColor = if (isDark) Color.White else Color(0xFF0F172A)
-    val subTextColor = if (isDark) Color(0xFF94A3B8) else Color(0xFF64748B)
+    val textColor = if (isDark) Color.White else Color(0xFF17253D)
+    val subTextColor = if (isDark) Color(0xFF94A3B8) else Color(0xFF6F8098)
 
     Box(modifier = modifier.fillMaxSize()) {
         // Pure freeform list without boxed frames or unnecessary headers/explanations
@@ -121,7 +121,7 @@ fun InteraccionesScreen(
                     Icon(
                         imageVector = Icons.Default.AutoAwesome,
                         contentDescription = "Live Vibe",
-                        tint = if (isDark) Color(0xFF38BDF8) else Color(0xFF0284C7),
+                        tint = if (isDark) Color(0xFF83C9FF) else Color(0xFF65B9FF),
                         modifier = Modifier.size(14.dp)
                     )
                     Spacer(modifier = Modifier.width(4.dp))
@@ -229,7 +229,7 @@ private fun FreeformInteractionItem(
                         modifier = Modifier
                             .size(44.dp)
                             .clip(CircleShape)
-                            .background(if (isDark) Color(0xFF38BDF8) else Color(0xFF0284C7)),
+                            .background(if (isDark) Color(0xFF83C9FF) else Color(0xFF65B9FF)),
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
@@ -279,7 +279,7 @@ private fun FreeformInteractionItem(
                                         .weight(1f)
                                         .height((heightRatio * 22).coerceAtLeast(4f).dp)
                                         .clip(RoundedCornerShape(2.dp))
-                                        .background(if (isDark) Color(0xFF38BDF8) else Color(0xFF0284C7))
+                                        .background(if (isDark) Color(0xFF83C9FF) else Color(0xFF65B9FF))
                                 )
                             }
                         }

@@ -63,7 +63,7 @@ fun CardEditorModal(
     val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
 
     var selectedType by remember { mutableStateOf(CardType.INVITATION) }
-    var selectedEffect by remember { mutableStateOf(CardVisualEffect.COSMIC_SINGULARITY) }
+    var selectedEffect by remember { mutableStateOf(CardVisualEffect.PURE_GLASS_PRISM) }
     var title by remember { mutableStateOf("Noche Cósmica en la Azotea") }
     var description by remember { mutableStateOf("Música lofi, proyecciones y charla entre amigos") }
     var details by remember { mutableStateOf("Viernes 20:00 • Tokyo Lounge") }
@@ -73,13 +73,13 @@ fun CardEditorModal(
     var pollOption2 by remember { mutableStateOf("Quizás más tarde ☕") }
     var pollOption3 by remember { mutableStateOf("Me apunto 100% 🔥") }
 
-    val textColor = if (isDark) Color.White else Color(0xFF0F172A)
-    val subTextColor = if (isDark) Color(0xFF94A3B8) else Color(0xFF64748B)
+    val textColor = if (isDark) Color.White else Color(0xFF17253D)
+    val subTextColor = if (isDark) Color(0xFF94A3B8) else Color(0xFF6F8098)
 
     ModalBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = sheetState,
-        containerColor = if (isDark) Color(0xFF0B132B) else Color(0xFFF8FAFC),
+        containerColor = if (isDark) Color(0xFF0B132B) else Color(0xFFF5FAFF),
         shape = RoundedCornerShape(topStart = 32.dp, topEnd = 32.dp),
         modifier = Modifier.imePadding()
     ) {
@@ -119,7 +119,7 @@ fun CardEditorModal(
                         modifier = Modifier
                             .clip(RoundedCornerShape(14.dp))
                             .background(
-                                if (isSelected) Color(0xFF38BDF8)
+                                if (isSelected) Color(0xFF83C9FF)
                                 else (if (isDark) Color(0xFF1E293B) else Color.White)
                             )
                             .border(1.dp, if (isSelected) Color.White else Color.Black.copy(alpha = 0.08f), RoundedCornerShape(14.dp))
@@ -167,7 +167,7 @@ fun CardEditorModal(
             Spacer(modifier = Modifier.height(14.dp))
 
             // 2. Catálogo de Efectos Visuales
-            Text("2. Catálogo de efectos y acabados", color = textColor, fontSize = 13.sp, fontWeight = FontWeight.Bold)
+            Text("2. Cristal, color y acabados", color = textColor, fontSize = 13.sp, fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.height(6.dp))
             LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 items(CardVisualEffect.values()) { effect ->
@@ -214,8 +214,8 @@ fun CardEditorModal(
                         modifier = Modifier
                             .size(40.dp)
                             .clip(CircleShape)
-                            .background(if (selectedSticker == emoji) Color(0xFF38BDF8).copy(alpha = 0.3f) else Color.Transparent)
-                            .border(1.dp, if (selectedSticker == emoji) Color(0xFF38BDF8) else Color.Transparent, CircleShape)
+                            .background(if (selectedSticker == emoji) Color(0xFF83C9FF).copy(alpha = 0.3f) else Color.Transparent)
+                            .border(1.dp, if (selectedSticker == emoji) Color(0xFF83C9FF) else Color.Transparent, CircleShape)
                             .clickable { selectedSticker = emoji },
                         contentAlignment = Alignment.Center
                     ) {
@@ -234,7 +234,7 @@ fun CardEditorModal(
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true,
                 shape = RoundedCornerShape(14.dp),
-                colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = Color(0xFF38BDF8))
+                colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = Color(0xFF83C9FF))
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -246,7 +246,7 @@ fun CardEditorModal(
                 modifier = Modifier.fillMaxWidth(),
                 maxLines = 2,
                 shape = RoundedCornerShape(14.dp),
-                colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = Color(0xFF38BDF8))
+                colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = Color(0xFF83C9FF))
             )
 
             if (selectedType == CardType.INVITATION || selectedType == CardType.MINI_GAME) {
@@ -258,7 +258,7 @@ fun CardEditorModal(
                     modifier = Modifier.fillMaxWidth(),
                     singleLine = true,
                     shape = RoundedCornerShape(14.dp),
-                    colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = Color(0xFF38BDF8))
+                    colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = Color(0xFF83C9FF))
                 )
             }
 
@@ -325,7 +325,7 @@ fun CardEditorModal(
                     .fillMaxWidth()
                     .height(52.dp),
                 shape = RoundedCornerShape(16.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF38BDF8))
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF83C9FF))
             ) {
                 Icon(Icons.Default.Send, contentDescription = null, tint = Color.White)
                 Spacer(modifier = Modifier.width(8.dp))
