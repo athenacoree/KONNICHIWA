@@ -1,0 +1,6 @@
+{
+  "name": "KONNICHIWA",
+  "description": "Private futuristic glassmorphic social messenger for close friends with live interactions, 3D interactive cards, custom card editor, polls, voice orbs, and rich media.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
