@@ -234,8 +234,8 @@ fun ChatDetailScreen(
                         .clip(CircleShape)
                         .background(
                             Brush.linearGradient(
-                                if (isDark) listOf(Color(0xFF38BDF8), Color(0xFF818CF8))
-                                else listOf(Color(0xFF0284C7), Color(0xFF38BDF8))
+                                if (isDark) if (isDark) listOf(Color(0xFF38BDF8), Color(0xFF818CF8)) else listOf(Color(0xFF65B9FF), Color(0xFF9ECFFF))
+                                else listOf(Color(0xFF69BFFF), Color(0xFF9DD7FF))
                             )
                         )
                         .testTag("chat_plus_action_button")
@@ -261,10 +261,10 @@ fun ChatDetailScreen(
                     shape = RoundedCornerShape(24.dp),
                     maxLines = 4,
                     colors = OutlinedTextFieldDefaults.colors(
-                        focusedBorderColor = Color(0xFF38BDF8),
-                        unfocusedBorderColor = if (isDark) Color.White.copy(alpha = 0.2f) else Color.Black.copy(alpha = 0.12f),
-                        focusedContainerColor = if (isDark) Color(0xFF0F172A).copy(alpha = 0.7f) else Color.White.copy(alpha = 0.85f),
-                        unfocusedContainerColor = if (isDark) Color(0xFF0F172A).copy(alpha = 0.5f) else Color.White.copy(alpha = 0.7f)
+                        focusedBorderColor = if (isDark) Color(0xFF38BDF8) else Color(0xFF69BFFF),
+                        unfocusedBorderColor = if (isDark) Color.White.copy(alpha = 0.2f) else Color(0xFFB8DDFB),
+                        focusedContainerColor = if (isDark) Color(0xFF0F172A).copy(alpha = 0.7f) else Color(0xFFEAF5FF).copy(alpha = 0.96f),
+                        unfocusedContainerColor = if (isDark) Color(0xFF0F172A).copy(alpha = 0.5f) else Color(0xFFF1F8FF).copy(alpha = 0.94f)
                     )
                 )
 
