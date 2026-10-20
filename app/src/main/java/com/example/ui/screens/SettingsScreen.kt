@@ -74,8 +74,8 @@ fun SettingsScreen(
     isDark: Boolean,
     modifier: Modifier = Modifier
 ) {
-    val textColor = if (isDark) Color.White else Color(0xFF0F172A)
-    val subTextColor = if (isDark) Color(0xFF94A3B8) else Color(0xFF64748B)
+    val textColor = if (isDark) Color.White else Color(0xFF17253D)
+    val subTextColor = if (isDark) Color(0xFF94A3B8) else Color(0xFF6F8098)
 
     // Expandable folders state (one below the other, WhatsApp style)
     val expandedFolders = remember {
@@ -122,7 +122,7 @@ fun SettingsScreen(
                     Box(
                         modifier = Modifier
                             .clip(RoundedCornerShape(16.dp))
-                            .background(if (isSelected) (if (isDark) Color(0xFF38BDF8) else Color(0xFF0284C7)) else Color.Transparent)
+                            .background(if (isSelected) (if (isDark) Color(0xFF83C9FF) else Color(0xFF65B9FF)) else Color.Transparent)
                             .clickable { onSelectLanguage(lang) }
                             .padding(horizontal = 8.dp, vertical = 4.dp),
                         contentAlignment = Alignment.Center
@@ -205,7 +205,7 @@ fun SettingsScreen(
                         value = settings.style.glassBlurIntensity,
                         onValueChange = { onUpdateSettings(settings.copy(style = settings.style.copy(glassBlurIntensity = it))) },
                         valueRange = 0.4f..1f,
-                        colors = SliderDefaults.colors(thumbColor = Color(0xFF38BDF8), activeTrackColor = Color(0xFF38BDF8))
+                        colors = SliderDefaults.colors(thumbColor = Color(0xFF83C9FF), activeTrackColor = Color(0xFF83C9FF))
                     )
 
                     SettingSwitchRow("Bordes con reflejo iridiscente", settings.style.iridescentBorderGlow, textColor, subTextColor) {
@@ -354,7 +354,7 @@ fun SettingsScreen(
                         value = settings.accessibility.dynamicTextScale,
                         onValueChange = { onUpdateSettings(settings.copy(accessibility = settings.accessibility.copy(dynamicTextScale = it))) },
                         valueRange = 0.85f..1.35f,
-                        colors = SliderDefaults.colors(thumbColor = Color(0xFF38BDF8), activeTrackColor = Color(0xFF38BDF8))
+                        colors = SliderDefaults.colors(thumbColor = Color(0xFF83C9FF), activeTrackColor = Color(0xFF83C9FF))
                     )
                     SettingSwitchRow("Texto de alto contraste", settings.accessibility.highContrastText, textColor, subTextColor) {
                         onUpdateSettings(settings.copy(accessibility = settings.accessibility.copy(highContrastText = it)))
@@ -440,8 +440,8 @@ private fun WhatsAppSettingsFolder(
                         .clip(CircleShape)
                         .background(
                             Brush.linearGradient(
-                                if (isDark) listOf(Color(0xFF38BDF8), Color(0xFF818CF8))
-                                else listOf(Color(0xFF0284C7), Color(0xFF38BDF8))
+                                if (isDark) listOf(Color(0xFF83C9FF), Color(0xFF818CF8))
+                                else listOf(Color(0xFF65B9FF), Color(0xFF83C9FF))
                             )
                         ),
                     contentAlignment = Alignment.Center
@@ -531,7 +531,7 @@ private fun WallpaperThumbnailCard(
                 )
                 .border(
                     width = if (isSelected) 2.5.dp else 1.dp,
-                    color = if (isSelected) Color(0xFF38BDF8) else Color.White.copy(alpha = 0.4f),
+                    color = if (isSelected) Color(0xFF83C9FF) else Color.White.copy(alpha = 0.4f),
                     shape = RoundedCornerShape(18.dp)
                 ),
             contentAlignment = Alignment.Center
@@ -541,7 +541,7 @@ private fun WallpaperThumbnailCard(
                     modifier = Modifier
                         .size(24.dp)
                         .clip(CircleShape)
-                        .background(Color(0xFF38BDF8)),
+                        .background(Color(0xFF83C9FF)),
                     contentAlignment = Alignment.Center
                 ) {
                     Icon(
@@ -560,7 +560,7 @@ private fun WallpaperThumbnailCard(
             text = wallpaper.nameEs,
             fontSize = 10.sp,
             maxLines = 1,
-            color = if (wallpaper.isDark) Color.White else Color(0xFF0F172A),
+            color = if (wallpaper.isDark) Color.White else Color(0xFF17253D),
             fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
         )
     }
@@ -592,7 +592,7 @@ private fun SettingSwitchRow(
             onCheckedChange = onCheckedChange,
             colors = SwitchDefaults.colors(
                 checkedThumbColor = Color.White,
-                checkedTrackColor = Color(0xFF38BDF8)
+                checkedTrackColor = Color(0xFF83C9FF)
             )
         )
     }
@@ -622,7 +622,7 @@ private fun SettingSelectorRow(
         )
         Text(
             text = value,
-            color = Color(0xFF38BDF8),
+            color = Color(0xFF83C9FF),
             fontSize = 12.sp,
             fontWeight = FontWeight.Bold
         )
