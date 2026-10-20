@@ -72,8 +72,8 @@ fun ChatsScreen(
     modifier: Modifier = Modifier
 ) {
     var showAddModal by remember { mutableStateOf(false) }
-    val textColor = if (isDark) Color.White else Color(0xFF0F172A)
-    val subTextColor = if (isDark) Color(0xFF94A3B8) else Color(0xFF64748B)
+    val textColor = if (isDark) Color.White else Color(0xFF17253D)
+    val subTextColor = if (isDark) Color(0xFF94A3B8) else Color(0xFF6F8098)
 
     Box(modifier = modifier.fillMaxSize()) {
         Column(
@@ -104,13 +104,13 @@ fun ChatsScreen(
                         .shadow(
                             elevation = 8.dp,
                             shape = CircleShape,
-                            ambientColor = if (isDark) Color.Black.copy(alpha = 0.4f) else Color(0xFF0284C7).copy(alpha = 0.2f)
+                            ambientColor = if (isDark) Color.Black.copy(alpha = 0.4f) else Color(0xFF65B9FF).copy(alpha = 0.2f)
                         )
                         .clip(CircleShape)
                         .background(
                             Brush.linearGradient(
-                                if (isDark) listOf(Color(0xFF38BDF8), Color(0xFF818CF8))
-                                else listOf(Color(0xFF0284C7), Color(0xFF38BDF8))
+                                if (isDark) listOf(Color(0xFF83C9FF), Color(0xFF818CF8))
+                                else listOf(Color(0xFF65B9FF), Color(0xFF83C9FF))
                             )
                         )
                         .border(1.2.dp, Color.White.copy(alpha = 0.6f), CircleShape)
@@ -169,7 +169,7 @@ fun ChatsScreen(
             ModalBottomSheet(
                 onDismissRequest = { showAddModal = false },
                 sheetState = sheetState,
-                containerColor = if (isDark) Color(0xFF0B132B) else Color(0xFFF8FAFC),
+                containerColor = if (isDark) Color(0xFF0B132B) else Color(0xFFF5FAFF),
                 shape = RoundedCornerShape(topStart = 32.dp, topEnd = 32.dp)
             ) {
                 Column(
@@ -205,7 +205,7 @@ fun ChatsScreen(
                         singleLine = true,
                         shape = RoundedCornerShape(16.dp),
                         colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = Color(0xFF38BDF8),
+                            focusedBorderColor = Color(0xFF83C9FF),
                             unfocusedBorderColor = if (isDark) Color.White.copy(alpha = 0.2f) else Color.Black.copy(alpha = 0.15f)
                         )
                     )
@@ -220,7 +220,7 @@ fun ChatsScreen(
                         singleLine = true,
                         shape = RoundedCornerShape(16.dp),
                         colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = Color(0xFF38BDF8),
+                            focusedBorderColor = Color(0xFF83C9FF),
                             unfocusedBorderColor = if (isDark) Color.White.copy(alpha = 0.2f) else Color.Black.copy(alpha = 0.15f)
                         )
                     )
@@ -239,7 +239,7 @@ fun ChatsScreen(
                             .height(50.dp),
                         shape = RoundedCornerShape(16.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = if (isDark) Color(0xFF38BDF8) else Color(0xFF0284C7)
+                            containerColor = if (isDark) Color(0xFF83C9FF) else Color(0xFF65B9FF)
                         )
                     ) {
                         Icon(Icons.Default.PersonAdd, contentDescription = null, tint = Color.White)
