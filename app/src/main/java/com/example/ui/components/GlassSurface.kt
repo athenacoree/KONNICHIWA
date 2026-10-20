@@ -19,52 +19,62 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * Lightweight frosted-glass surface. Keep the content readable and use a clear rim,
+ * soft tint and layered shadow instead of a dark opaque panel in light mode.
+ */
 @Composable
 fun GlassSurface(
     modifier: Modifier = Modifier,
-    shape: Shape = RoundedCornerShape(24.dp),
+    shape: Shape = RoundedCornerShape(26.dp),
     isDark: Boolean = false,
-    alpha: Float = 0.65f,
-    elevation: Dp = 8.dp,
+    alpha: Float = 0.72f,
+    elevation: Dp = 10.dp,
     borderWidth: Dp = 1.dp,
     onClick: (() -> Unit)? = null,
     content: @Composable BoxScope.() -> Unit
 ) {
+    val safeAlpha = alpha.coerceIn(0.2f, 0.96f)
     val backgroundColor = if (isDark) {
-        Color(0xFF0F172A).copy(alpha = alpha.coerceIn(0.2f, 0.9f))
+        Color(0xFF172235).copy(alpha = safeAlpha)
     } else {
-        Color(0xFFFFFFFF).copy(alpha = alpha.coerceIn(0.4f, 0.95f))
+        Color(0xFFFDFEFF).copy(alpha = safeAlpha)
     }
 
     val rimGradient = if (isDark) {
         Brush.linearGradient(
             colors = listOf(
-                Color.White.copy(alpha = 0.22f),
-                Color.White.copy(alpha = 0.05f),
-                Color.Black.copy(alpha = 0.35f)
+                Color.White.copy(alpha = 0.32f),
+                Color(0xFF8ABEFF).copy(alpha = 0.10f),
+                Color.White.copy(alpha = 0.04f)
             )
         )
     } else {
         Brush.linearGradient(
             colors = listOf(
-                Color.White.copy(alpha = 0.85f),
-                Color.White.copy(alpha = 0.3f),
-                Color.White.copy(alpha = 0.5f)
+                Color.White.copy(alpha = 0.98f),
+                Color(0xFFB9DEFF).copy(alpha = 0.82f),
+                Color.White.copy(alpha = 0.58f)
             )
         )
     }
 
-    val shadowColor = if (isDark) Color.Black.copy(alpha = 0.45f) else Color(0xFF64748B).copy(alpha = 0.16f)
+    val shadowColor = if (isDark) {
+        Color.Black.copy(alpha = 0.30f)
+    } else {
+        Color(0xFF6C9AC8).copy(alpha = 0.19f)
+    }
 
     val clickableModifier = if (onClick != null) {
         Modifier.clickable(
             interactionSource = remember { MutableInteractionSource() },
-            indication = ripple(color = if (isDark) Color.White.copy(alpha = 0.15f) else Color(0xFF0284C7).copy(alpha = 0.15f)),
+            indication = ripple(
+                color = if (isDark) Color.White.copy(alpha = 0.16f)
+                else Color(0xFF329BFA).copy(alpha = 0.16f)
+            ),
             onClick = onClick
         )
-    } else {
-        Modifier
-    }
+    } else Modifier
 
     Box(
         modifier = modifier
