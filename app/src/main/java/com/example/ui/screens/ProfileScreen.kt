@@ -71,8 +71,8 @@ fun ProfileScreen(
     modifier: Modifier = Modifier
 ) {
     var showEditSheet by remember { mutableStateOf(false) }
-    val textColor = if (isDark) Color.White else Color(0xFF0F172A)
-    val subTextColor = if (isDark) Color(0xFF94A3B8) else Color(0xFF64748B)
+    val textColor = if (isDark) Color.White else Color(0xFF17253D)
+    val subTextColor = if (isDark) Color(0xFF94A3B8) else Color(0xFF6F8098)
 
     val sampleMemories = listOf(
         "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=500&auto=format&fit=crop&q=80",
@@ -108,7 +108,7 @@ fun ProfileScreen(
                     Icon(
                         imageVector = Icons.Default.Verified,
                         contentDescription = "Verified",
-                        tint = if (isDark) Color(0xFF38BDF8) else Color(0xFF0284C7),
+                        tint = if (isDark) Color(0xFF83C9FF) else Color(0xFF65B9FF),
                         modifier = Modifier.size(18.dp)
                     )
                 }
@@ -141,10 +141,10 @@ fun ProfileScreen(
                         .background(
                             Brush.sweepGradient(
                                 listOf(
-                                    Color(0xFF38BDF8),
+                                    Color(0xFF83C9FF),
                                     Color(0xFF818CF8),
                                     Color(0xFFE879F9),
-                                    Color(0xFF38BDF8)
+                                    Color(0xFF83C9FF)
                                 )
                             )
                         )
@@ -198,14 +198,14 @@ fun ProfileScreen(
                     modifier = Modifier
                         .clip(RoundedCornerShape(12.dp))
                         .background(if (isDark) Color(0xFF1E293B) else Color(0xFFE0F2FE))
-                        .border(1.dp, Color(0xFF38BDF8).copy(alpha = 0.4f), RoundedCornerShape(12.dp))
+                        .border(1.dp, Color(0xFF83C9FF).copy(alpha = 0.4f), RoundedCornerShape(12.dp))
                         .padding(horizontal = 10.dp, vertical = 4.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Icon(
                         imageVector = Icons.Default.Headphones,
                         contentDescription = "Mood",
-                        tint = if (isDark) Color(0xFF38BDF8) else Color(0xFF0284C7),
+                        tint = if (isDark) Color(0xFF83C9FF) else Color(0xFF65B9FF),
                         modifier = Modifier.size(14.dp)
                     )
                     Spacer(modifier = Modifier.width(6.dp))
@@ -241,7 +241,7 @@ fun ProfileScreen(
                         .height(42.dp),
                     shape = RoundedCornerShape(14.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = if (isDark) Color(0xFF1E293B) else Color(0xFFE2E8F0)
+                        containerColor = if (isDark) Color(0xFF1E293B) else Color(0xFFDCEBFA)
                     )
                 ) {
                     Text(
@@ -257,7 +257,7 @@ fun ProfileScreen(
                     modifier = Modifier
                         .size(42.dp)
                         .clip(RoundedCornerShape(14.dp))
-                        .background(if (isDark) Color(0xFF1E293B) else Color(0xFFE2E8F0))
+                        .background(if (isDark) Color(0xFF1E293B) else Color(0xFFDCEBFA))
                 ) {
                     Icon(
                         imageVector = Icons.Default.QrCode2,
@@ -282,7 +282,7 @@ fun ProfileScreen(
                                 .size(58.dp)
                                 .clip(CircleShape)
                                 .background(if (isDark) Color(0xFF1E293B) else Color(0xFFF1F5F9))
-                                .border(1.5.dp, if (isDark) Color(0xFF38BDF8) else Color(0xFF0284C7), CircleShape),
+                                .border(1.5.dp, if (isDark) Color(0xFF83C9FF) else Color(0xFF65B9FF), CircleShape),
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
@@ -340,7 +340,7 @@ fun ProfileScreen(
             ModalBottomSheet(
                 onDismissRequest = { showEditSheet = false },
                 sheetState = sheetState,
-                containerColor = if (isDark) Color(0xFF0B132B) else Color(0xFFF8FAFC),
+                containerColor = if (isDark) Color(0xFF0B132B) else Color(0xFFF5FAFF),
                 shape = RoundedCornerShape(topStart = 32.dp, topEnd = 32.dp)
             ) {
                 Column(
@@ -375,7 +375,7 @@ fun ProfileScreen(
                         singleLine = true,
                         shape = RoundedCornerShape(16.dp),
                         colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = Color(0xFF38BDF8)
+                            focusedBorderColor = Color(0xFF83C9FF)
                         )
                     )
 
@@ -389,7 +389,7 @@ fun ProfileScreen(
                         singleLine = true,
                         shape = RoundedCornerShape(16.dp),
                         colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = Color(0xFF38BDF8)
+                            focusedBorderColor = Color(0xFF83C9FF)
                         )
                     )
 
@@ -403,7 +403,7 @@ fun ProfileScreen(
                         singleLine = true,
                         shape = RoundedCornerShape(16.dp),
                         colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = Color(0xFF38BDF8)
+                            focusedBorderColor = Color(0xFF83C9FF)
                         )
                     )
 
@@ -417,7 +417,7 @@ fun ProfileScreen(
                         maxLines = 3,
                         shape = RoundedCornerShape(16.dp),
                         colors = OutlinedTextFieldDefaults.colors(
-                            focusedBorderColor = Color(0xFF38BDF8)
+                            focusedBorderColor = Color(0xFF83C9FF)
                         )
                     )
 
@@ -433,7 +433,7 @@ fun ProfileScreen(
                             .height(50.dp),
                         shape = RoundedCornerShape(16.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = if (isDark) Color(0xFF38BDF8) else Color(0xFF0284C7)
+                            containerColor = if (isDark) Color(0xFF83C9FF) else Color(0xFF65B9FF)
                         )
                     ) {
                         Text(
